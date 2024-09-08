@@ -11,6 +11,8 @@ This template serves as a way to load one or more scripts in a GTM container wit
 ## Usage 
 Add the template to your container, create a new *GitHub Script Loader* tag and trigger it when there is consent to load the external resources that you added to the tag. 
 
+![image](https://github.com/user-attachments/assets/7c19a964-f43b-4829-a138-6f3f97d6b056)
+
 ### Add scripts
 Your files on GitHub cannot be loaded directly from a reporitory URL, even if you try to load the raw contents from *githubusercontent.com*. But there are ways how to load a JavaScript file from a repository, using either one of the supported CDN services (*jsDelivr* and *statically.io*) or put your files into a repository that is published using [GitHub Pages](https://pages.github.com/).
 
