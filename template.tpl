@@ -13,7 +13,7 @@ ___INFO___
   "id": "cvt_temp_public_id",
   "version": 1,
   "securityGroups": [],
-  "displayName": "jsDelivr Script Loader",
+  "displayName": "External Script Loader",
   "categories": [
     "UTILITY",
     "SALES"
@@ -21,9 +21,9 @@ ___INFO___
   "brand": {
     "id": "mbaersch",
     "displayName": "mbaersch",
-    "thumbnail": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABj1BMVEUAAADmTj2+SDvMSjvQSjraTDzmTj29SDu9SDvmTj3mTjzmTj3XSzzmTj2+SDvmTj3mTj29SDu9SDu+SDvmTjy+SDrmTj2/STrmTj29SDvmTj2+SDrmTj29SDu+SDu+RzvmTj3mTjzRSzzcTDy9SDvmTj3mTj29SDvmTT29SDvmTj3mTj29SDvmTj3jTTy/SDvmTj3nTj2+SDrnTT2/SDu9STq9SDu9SDu9SDvmTj3aTTy9SDu+SDu9SDu+SDvkTj29SDu9SDvmTj3fnCb+yC/+xi/cTDzASDu+SzrMbjL3vi3ckynnUT3tdTnATjnwhzfSfy/WiCzhnyfpXDzpYTvwgjjvfzjIZDXJaDT4rDPLazP6szL6tjH8vjDQejDscDruezjxjDfGXjb3qDP8wTDZjirakSnemCjdlSjfmifmTz3DVjjEWzf0mzXzlzXHYTX2oDTOcjP5rzLPdTHnVDzsbDrpiDXtljTypzH1ty7XiivdUDzqZjvfWjvmfTjykDbqkDTLaDTTfi/Ugy7Xhy0gJWumAAAAQXRSTlMA/foNCAT49d/PSxgG9O/t3M+sX10iIBfCl4iIem9TOjgoEfrp6ObXu7expqOVjntvZUovLinWwcCse25mV0I9MT0cJPgAAAJHSURBVDjLddP3W9pgEAdwCIYNsjcy3Ftr7V6UpG1ADJG99yoKCHV2jz+8771BUh7q99f7PJfL5SL6N6RKubPr8Yv+H9LvddmWFwn5uvuhZLYsOdjfWJGK3757HwjI5AbjtJmzmDZ1qIqCAES2umU0z/FVtUW5rdBAdQIghOyRfQEMabLNQ5XP0ecPASFa/QtSRDqkk2o8lrj6dd4XDOFEj3Ddgfj3YXIQOmmPutXjO/AcARMPPl7UaLrH3oSZNBcujoVsAQGlBoMvGZqicqXL9Hk4GGyNhdaDgHce6p/OaAqB5FW2GURppzGQHyLg0wGIFCiUTOIaNYBE8aR6KwIqBbwAbkCflb6lcIdWFj9jXQJLXkMgNoQG+UjmZsSgFp1oKgtgaw72vAmvmIcGvQodajFMo/G7z+FnONUAdsRjUIhkqNBJmKkyp9EOAMJNwrdwIXBUqaMRywUEgly2keZaRVjDSxFkXwpDsPl6JVmnQh0uXc2m+kwVgaVXGChhESU2UmYTvdqPn6lis9luMDCC/A0Gr1egQy2XGAxKycs/eA+dEQC9GYMDHXyKciGXjORoNAOE6wZQHlsxsCjwrtnCMJKneHB7GoAYJBiobPw1lGuJSh1AO8rXCbsaA/+GmP/g8YsYex2+LaZgzQB2xyfr0Agn97V7PDkoOVwDxLKngFUIR4ujNTyYnL7a59CJp4HsidE69Wd4t5fFAiD0bvPMr6V8CucPgFh1HpKi2ahMaxoxAkt2z/ifmiV7ikU8270hfc/42YT8Be4pvuDEw1JnAAAAAElFTkSuQmCC"
+    "thumbnail": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAAAXFRUlJSUYFhYfFRUXFRUXFRUZFhYcGRkaGhoYFhYYFRUXFRUXFhYYFhYYFRUYFhYoGxsYFhYYFhYYFhYbFhYfHx9AQEAXFRUXFRUZFhYXFRUZFhYZFhYYFxcbGxsYFRUXFxcYGBgYGBgYFhYYFhYYFRUYFRUYFRUYFhYZFxcYFRUYGBgXFRUbXhiVAAAALXRSTlMA8waWF+XARiQc+eDZ0siRggzsdIAuEATuz2ZhXFJKEspBNCC4t6qonYF7bCqbhs9+AAABSklEQVQ4y31SV3bEIAwUYOOy7vZ6XbZm0xPuf70YCVf8Mj/wNINGBZjBPSEjxiIpPA42HMHUBCacDc0zomdJxlfPE2UhWSQ5umoH7nF6T7ytcIy/zh99FEuueW+1C9WR6UgHp95VLJYyblTxw+GioxkaYP0vAJD/AsKvAeCJvWgToUiwQYBhAcBpAOet4Erj4ODR5bkV3KhozziUYKE3HhJP3xbUSEiI0AF2cNBMBFjjYU9wp6fs/wyMDuXYPA8pd7I/BjD9J5DiebcFb0ikuJS9QfQUv0DO6JadVnxJUZbjstJzPJRTeTczosd3pAipXm6oGi9vaWwIqUaEOOGvIVPg691cSfCYBBU1POT/BKdMO24WOfKxCQQuPp4REu8Gy2//WnbV2Mjq21OOFkN8KYiD1eCrcC0IMw5r+Cljo0XBhA828npyzOfoH8B4RM+to1xdAAAAAElFTkSuQmCC"
   },
-  "description": "Loads multiple scripts that are stored on GitHub, npm or other sources that are available via jsdelivr.com",
+  "description": "Loads multiple scripts that are stored on GitHub, npm or other sources that are available via jsdelivr.com or statically.io. Can also load scripts directly from GitHub pages.",
   "containerContexts": [
     "WEB"
   ]
@@ -36,7 +36,7 @@ ___TEMPLATE_PARAMETERS___
   {
     "type": "GROUP",
     "name": "grpScripts",
-    "displayName": "Script URLs to load from jsDelivr",
+    "displayName": "Scripts to load",
     "groupStyle": "NO_ZIPPY",
     "subParams": [
       {
@@ -46,7 +46,7 @@ ___TEMPLATE_PARAMETERS___
         "simpleTableColumns": [
           {
             "defaultValue": "",
-            "displayName": "Enter one or multiple URLs from cdn.jsdelivr.net",
+            "displayName": "Enter one or multiple URLs from jsdelivr.net or statically.io",
             "name": "scriptUrl",
             "type": "TEXT"
           }
@@ -137,6 +137,14 @@ ___WEB_PERMISSIONS___
               {
                 "type": 1,
                 "string": "https://cdn.jsdelivr.net/*"
+              },
+              {
+                "type": 1,
+                "string": "https://cdn.statically.io/*"
+              },
+              {
+                "type": 1,
+                "string": "https://*.github.io/*"
               }
             ]
           }
