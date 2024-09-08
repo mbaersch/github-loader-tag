@@ -1,5 +1,5 @@
 homepage: "https://www.markus-baersch.de"
 documentation: "https://github.com/mbaersch/jsdelivr-loader-tag-tag#readme"
 versions:
-  - sha: xxx
+  - sha: af36e7c240881ab92a91e693007ec953de983046
     changeNotes: initial release.
