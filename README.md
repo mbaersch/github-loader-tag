@@ -8,6 +8,8 @@ Loads multiple scripts that are stored on GitHub, npn or other available sources
 
 This template serves as a way to load one or more scripts in a GTM container without access to Custom HTML tags ([restricted tag types](https://developers.google.com/tag-platform/tag-manager/restrict)).  
 
+![image](https://github.com/user-attachments/assets/2a2131c8-3b9e-431a-a07d-c1ea4576ad66)
+
 ## Usage 
 Add the template to your container, create a new *jsDelivr Script Loader* tag and trigger it when there is consent to load the external resources that you added to the tag. 
 
