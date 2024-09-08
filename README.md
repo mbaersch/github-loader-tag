@@ -29,5 +29,8 @@ If you want to load a script that you host on GitHub without using GitHub pages,
 
 
 ### Options
-Check **Log script load status to console** to debug and verify that scripts are loaded as expected. 
+Check **Log script load status to console** to debug and verify that scripts are loaded as expected.
+
+![image](https://github.com/user-attachments/assets/768b444d-9461-492a-8a6d-bd37dcb673a3)
+
 When the tag might get fired multiple times, activate **Use Cache Token** to prevent loading the same script twice.
