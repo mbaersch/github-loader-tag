@@ -1,5 +1,5 @@
 homepage: "https://www.markus-baersch.de"
 documentation: "https://github.com/mbaersch/github-loader-tag#readme"
 versions:
-  - sha: 7ee8ab5aa29d4f15b03d4cbbd8c6b6b66fdd4bf6
+  - sha: b38d25c4f416ce8a4e4b20b405096111363b66e3
     changeNotes: initial release.
