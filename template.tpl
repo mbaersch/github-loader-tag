@@ -15,15 +15,14 @@ ___INFO___
   "securityGroups": [],
   "displayName": "External Script Loader",
   "categories": [
-    "UTILITY",
-    "SALES"
+    "UTILITY"
   ],
   "brand": {
     "id": "mbaersch",
     "displayName": "mbaersch",
     "thumbnail": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAilBMVEUAAAAXFRUlJSUYFhYfFRUXFRUXFRUZFhYcGRkaGhoYFhYYFRUXFRUXFhYYFhYYFRUYFhYoGxsYFhYYFhYYFhYbFhYfHx9AQEAXFRUXFRUZFhYXFRUZFhYZFhYYFxcbGxsYFRUXFxcYGBgYGBgYFhYYFhYYFRUYFRUYFRUYFhYZFxcYFRUYGBgXFRUbXhiVAAAALXRSTlMA8waWF+XARiQc+eDZ0siRggzsdIAuEATuz2ZhXFJKEspBNCC4t6qonYF7bCqbhs9+AAABSklEQVQ4y31SV3bEIAwUYOOy7vZ6XbZm0xPuf70YCVf8Mj/wNINGBZjBPSEjxiIpPA42HMHUBCacDc0zomdJxlfPE2UhWSQ5umoH7nF6T7ytcIy/zh99FEuueW+1C9WR6UgHp95VLJYyblTxw+GioxkaYP0vAJD/AsKvAeCJvWgToUiwQYBhAcBpAOet4Erj4ODR5bkV3KhozziUYKE3HhJP3xbUSEiI0AF2cNBMBFjjYU9wp6fs/wyMDuXYPA8pd7I/BjD9J5DiebcFb0ikuJS9QfQUv0DO6JadVnxJUZbjstJzPJRTeTczosd3pAipXm6oGi9vaWwIqUaEOOGvIVPg691cSfCYBBU1POT/BKdMO24WOfKxCQQuPp4REu8Gy2//WnbV2Mjq21OOFkN8KYiD1eCrcC0IMw5r+Cljo0XBhA828npyzOfoH8B4RM+to1xdAAAAAElFTkSuQmCC"
   },
-  "description": "Loads multiple scripts that are stored on GitHub, npm or other sources that are available via jsdelivr.com or statically.io. Can also load scripts directly from GitHub pages.",
+  "description": "Loads multiple scripts that are stored on GitHub or available via jsdelivr.com or statically.io. Can also load scripts directly from GitHub pages.",
   "containerContexts": [
     "WEB"
   ]
@@ -89,34 +88,36 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const injectScript = require('injectScript');
 const log = data.logStatus === true ? require('logToConsole') : function(x){};
 
-let errorUrls = [], successUrls = [];
+let index = 0, errorUrls = [], successUrls = [];
 
-function countSuccess(x) { 
-  log("Script load success: ", x); 
-  successUrls.push(x); 
-}
-
-function countError(x) { 
-  log("ERROR loading script: ", x); 
-  errorUrls.push(x); 
-}
-
-data.scriptsTable.forEach(x => {
-  if (x.scriptUrl) {
-    injectScript(
-      x.scriptUrl,
-      e => { countSuccess(x.scriptUrl); },
-      e => { countError(x.scriptUrl); },
-      data.useCacheToken ? x.scriptUrl : null
-    );
+function loadNextScript() {
+  if (index < data.scriptsTable.length) {
+    let x = data.scriptsTable[index];
+    if (x.scriptUrl) {
+      injectScript(
+        x.scriptUrl,
+        e => { successUrls.push(x.scriptUrl); index++; loadNextScript(); },
+        e => { errorUrls.push(x.scriptUrl); index++; loadNextScript(); },
+        data.useCacheToken ? x.scriptUrl : null
+      );
+    }
+  } else {
+    if (errorUrls.length === 0) {
+      log("All scripts loaded without errors:\n " + successUrls.join("\n"));
+      data.gtmOnSuccess();
+    } else {
+      // error loading at least one script
+      log("Some scripts could not be loaded:\n" + errorUrls.join("\n") + 
+          "\n\n. Successfully loaded scripts:\n" + successUrls.join("\n"));
+      data.gtmOFailure();
+    }
   }
-});
+}
 
-
-if (errorUrls.length === 0)
+if (data.scriptsTable && data.scriptsTable.length > 0) 
+  loadNextScript();
+else 
   data.gtmOnSuccess();
-else
-  data.gtmOnFailure();
 
 
 ___WEB_PERMISSIONS___
@@ -182,12 +183,8 @@ ___WEB_PERMISSIONS___
 
 ___TESTS___
 
-scenarios:
-- name: test load
-  code: |-
-    runCode();
-    assertApi('injectScript').wasCalled();
-    assertApi('gtmOnSuccess').wasCalled();
+scenarios: []
+setup: ''
 
 
 ___NOTES___

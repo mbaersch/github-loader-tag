@@ -1,8 +1,8 @@
-# GitHub Script Loader
+# External Script Loader
 
 **Custom Tag Template for Google Tag Manager**
 
-Loads multiple scripts that are stored on GitHub (or other available sources) via **jsdelivr.com, statically.io, or GitHub Pages (github.io)**.   
+Loads multiple scripts that are stored on **GitHub** or available via **jsdelivr.com, statically.io, or GitHub Pages (github.io)**.   
 
 ![Template Status](https://img.shields.io/badge/Community%20Template%20Gallery%20Status-submitted-orange) ![Repo Size](https://img.shields.io/github/repo-size/mbaersch/github-loader-tag) ![License](https://img.shields.io/github/license/mbaersch/github-loader-tag)
 
