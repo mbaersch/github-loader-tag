@@ -4,7 +4,8 @@
 
 Loads multiple scripts that are stored on **GitHub** or available via **jsdelivr.com, statically.io, or GitHub Pages (github.io)**.   
 
-![Template Status](https://img.shields.io/badge/Community%20Template%20Gallery%20Status-submitted-orange) ![Repo Size](https://img.shields.io/github/repo-size/mbaersch/github-loader-tag) ![License](https://img.shields.io/github/license/mbaersch/github-loader-tag)
+[![Template Status](https://img.shields.io/badge/Community%20Template%20Gallery%20Status-published-green)](https://tagmanager.google.com/gallery/#/owners/mbaersch/templates/github-loader-tag) ![Repo Size](https://img.shields.io/github/repo-size/mbaersch/github-loader-tag) ![License](https://img.shelds.io/github/license/mbaersch/github-loader-tag)
+
 
 This template serves as a way to load one or more scripts in a GTM container without access to Custom HTML tags ([restricted tag types](https://developers.google.com/tag-platform/tag-manager/restrict)).  
 
